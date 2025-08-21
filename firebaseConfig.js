@@ -12,7 +12,6 @@ import firebase from "firebase";
 // Import environment variables for Firebase configuration
 // These values are stored in .env file and accessed via @env package
 // This approach keeps sensitive credentials secure and out of version control
-/***
 import {
   FIREBASE_API_KEY,
   FIREBASE_AUTH_DOMAIN,
@@ -20,9 +19,8 @@ import {
   FIREBASE_STORAGE_BUCKET,
   FIREBASE_MESSAGING_SENDER_ID,
   FIREBASE_APP_ID,
-  FIREBASE_MEASUREMENT_ID,
+  FIREBASE_MEASUREMENT_ID
 } from '@env';
-***/
 
 /**
  * Firebase configuration object
@@ -38,27 +36,14 @@ import {
  * @property {string} appId - Firebase application ID
  * @property {string} measurementId - Google Analytics measurement ID
  */
-/***
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID
-};
-***/
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDKd2L7b8pitOut0FUDzUrVr1jn6dfc2V0",
-  authDomain: "eventbuddy-f40a4.firebaseapp.com",
-  projectId: "eventbuddy-f40a4",
-  storageBucket: "eventbuddy-f40a4.firebasestorage.app",
-  messagingSenderId: "883715889747",
-  appId: "1:883715889747:web:d2bbc3c686d7d9845304a6",
-  measurementId: "G-H7KT6P4RK9"
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+  appId: FIREBASE_APP_ID,
+  measurementId: FIREBASE_MEASUREMENT_ID
 };
 
 /**
@@ -94,6 +79,7 @@ export const auth = firebase.auth();
  * @const {firebase.app.App}
  */
 export default firebase;
+
 
 
 
