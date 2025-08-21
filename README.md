@@ -55,23 +55,31 @@ EventBuddy is a React Native mobile application that helps users discover, creat
 
 ## 🛠 Firebase Setup
 
-Before running the app, you'll need to set up Firebase:
+Before running the app, you'll need to set up Firebase and configure your environment:
 
 1. Create a new Firebase project at [Firebase Console](https://console.firebase.google.com)
 2. Enable Authentication with Email/Password
 3. Enable Cloud Firestore
-4. Copy your Firebase configuration and replace it in `firebaseConfig.js`:
+4. Set up your environment variables:
+   - Copy the `.env.example` file and rename it to `.env`
+   - Replace the dummy values with your Firebase configuration:
+     ```bash
+     FIREBASE_API_KEY="your-api-key-here"
+     FIREBASE_AUTH_DOMAIN="your-project-id.firebaseapp.com"
+     FIREBASE_PROJECT_ID="your-project-id"
+     FIREBASE_STORAGE_BUCKET="your-project-id.appspot.com"
+     FIREBASE_MESSAGING_SENDER_ID="your-sender-id"
+     FIREBASE_APP_ID="your-app-id"
+     FIREBASE_MEASUREMENT_ID="G-XXXXXXXXXX"
+     ```
+   - You can find these values in your Firebase project settings
+   - Keep your `.env` file private and never commit it to Git
 
-```javascript
-const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-auth-domain",
-  projectId: "your-project-id",
-  storageBucket: "your-storage-bucket",
-  messagingSenderId: "your-sender-id",
-  appId: "your-app-id"
-};
-```
+⚠️ Important Security Note:
+- The `.env` file contains sensitive information and is ignored by Git
+- Never commit your real Firebase credentials to version control
+- Each developer should maintain their own local `.env` file
+- Use `.env.example` as a template for required environment variables
 
 ## 🚀 Running the App
 
